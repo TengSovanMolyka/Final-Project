@@ -5,6 +5,7 @@ import { Input, Output, EventEmitter } from '@angular/core';
   selector: 'app-cart-product',
   imports: [],
   templateUrl: './cart-product.html',
+  standalone: true,
   styleUrl: './cart-product.css'
 })
 export class CartProduct {

@@ -1,0 +1,33 @@
+<div class="max-w-5xl mx-auto p-6 bg-white dark:bg-gray-900 rounded-lg shadow-lg m-20">
+
+  <h1 class="text-3xl font-extrabold mb-8 text-center text-gray-900 dark:text-white">
+    Your Shopping Cart
+  </h1>
+@for (item_product of product_items; track item_product) {
+    <app-cart-product
+    [item_product]="item_product"
+    (handleAdd)="AddhadleCart($event)"
+    ></app-cart-product>
+}
+  <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+
+    <button
+      (click)="delete()"
+      class="flex-1 bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg shadow-md transition duration-300 ease-in-out"
+    >
+      Clear Cart
+    </button>
+
+    <button
+      (click)="alert()"
+      [disabled]="total_Price <= 0"
+      class="flex-1 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-semibold py-3 rounded-lg shadow-lg transition duration-300 ease-in-out"
+    >
+      Total: ${{ total_Price }}
+    </button>
+
+  </div>
+</div>
+
+
+
